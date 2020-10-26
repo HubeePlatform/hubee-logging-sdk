@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+	<PackageId>Hubee.Logging.Sdk</PackageId>
+	<PackageVersion>0.0.2</PackageVersion>
+	<Authors>Hubee</Authors>
+	<Company>GitHub</Company>
+    <RepositoryUrl>https://github.com/HubeePlatform/hubee-logging-sdk/</RepositoryUrl>
+	<RepositoryType>Git</RepositoryType>
+    <Description>Centralized logging implementation</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.9" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.9" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="3.1.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.Graylog" Version="2.2.1" />
+  </ItemGroup>
+
+</Project>

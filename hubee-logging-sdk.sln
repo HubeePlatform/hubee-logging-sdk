@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C68B294A-780A-4434-8EBF-1F343065C1AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hubee.Logging.Sdk", "src\Hubee.Logging.Sdk\Hubee.Logging.Sdk.csproj", "{6400E369-604E-48DF-B608-B1F2763E1538}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6400E369-604E-48DF-B608-B1F2763E1538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6400E369-604E-48DF-B608-B1F2763E1538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6400E369-604E-48DF-B608-B1F2763E1538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6400E369-604E-48DF-B608-B1F2763E1538}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6400E369-604E-48DF-B608-B1F2763E1538} = {C68B294A-780A-4434-8EBF-1F343065C1AC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8ADE0FD0-B104-4EDD-B315-762C08C71D21}
+	EndGlobalSection
+EndGlobal
