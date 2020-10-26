@@ -1,6 +1,6 @@
 ﻿using Hubee.Logging.Sdk.Core.Interfaces;
 using Hubee.Logging.Sdk.Core.Model;
-using Hubee.Logging.Sdk.Infra.Serilog.Configurations.Provides;
+using Hubee.Logging.Sdk.Infra.Serilog.Configurations.Providers;
 using Microsoft.AspNetCore.Hosting;
 
 namespace Hubee.Logging.Sdk.Infra.Serilog

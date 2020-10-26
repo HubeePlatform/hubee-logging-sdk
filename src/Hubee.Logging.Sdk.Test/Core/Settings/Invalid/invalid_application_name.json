@@ -1,0 +1,9 @@
+{
+  "HubeeLoggingConfig": {
+    "ApplicationName": "",
+    "LibraryType": "Serilog",
+    "ProviderType": "Console",
+    "Host": "localhost",
+    "Port": "8080"
+  }
+}
