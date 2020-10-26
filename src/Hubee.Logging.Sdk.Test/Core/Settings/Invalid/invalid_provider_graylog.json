@@ -1,0 +1,9 @@
+{
+  "HubeeLoggingConfig": {
+    "ApplicationName": "Test",
+    "LibraryType": "Serilog",
+    "ProviderType": "Graylog",
+    "Host": "",
+    "Port": ""
+  }
+}

@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C68B294A-780A-4434-8EBF-1F343065C1AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hubee.Logging.Sdk", "src\Hubee.Logging.Sdk\Hubee.Logging.Sdk.csproj", "{6400E369-604E-48DF-B608-B1F2763E1538}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hubee.Logging.Sdk", "src\Hubee.Logging.Sdk\Hubee.Logging.Sdk.csproj", "{6400E369-604E-48DF-B608-B1F2763E1538}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hubee.Logging.Sdk.Test", "src\Hubee.Logging.Sdk.Test\Hubee.Logging.Sdk.Test.csproj", "{46BD54EC-98B7-4ACA-A78C-5D2875C9B080}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +19,17 @@ Global
 		{6400E369-604E-48DF-B608-B1F2763E1538}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6400E369-604E-48DF-B608-B1F2763E1538}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6400E369-604E-48DF-B608-B1F2763E1538}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46BD54EC-98B7-4ACA-A78C-5D2875C9B080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46BD54EC-98B7-4ACA-A78C-5D2875C9B080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46BD54EC-98B7-4ACA-A78C-5D2875C9B080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46BD54EC-98B7-4ACA-A78C-5D2875C9B080}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6400E369-604E-48DF-B608-B1F2763E1538} = {C68B294A-780A-4434-8EBF-1F343065C1AC}
+		{46BD54EC-98B7-4ACA-A78C-5D2875C9B080} = {C68B294A-780A-4434-8EBF-1F343065C1AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8ADE0FD0-B104-4EDD-B315-762C08C71D21}

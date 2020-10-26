@@ -17,7 +17,15 @@ namespace Hubee.Logging.Sdk.Core.Model
             return
             string.IsNullOrEmpty(this.ApplicationName) ||
             this.LibraryTypeEnum == LogLibraryType.Undefined ||
-            this.ProviderTypeEnum == LogProviderType.Undefined;
+            this.ProviderTypeEnum == LogProviderType.Undefined ||
+            this.IsNotValidProvider();
+        }
+
+        private bool IsNotValidProvider()
+        {
+            return
+                this.ProviderTypeEnum == LogProviderType.Graylog &&
+                string.IsNullOrEmpty(this.Host);
         }
     }
 }

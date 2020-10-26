@@ -3,7 +3,7 @@ using Serilog;
 using Serilog.Sinks.Graylog;
 using Serilog.Sinks.Graylog.Core.Transport;
 
-namespace Hubee.Logging.Sdk.Infra.Serilog.Configurations.Provides
+namespace Hubee.Logging.Sdk.Infra.Serilog.Configurations.Providers
 {
     public class GraylogProvider : BaseProvider
     {

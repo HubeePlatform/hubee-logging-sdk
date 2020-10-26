@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Serilog;
 
-namespace Hubee.Logging.Sdk.Infra.Serilog.Configurations.Provides
+namespace Hubee.Logging.Sdk.Infra.Serilog.Configurations.Providers
 {
     public class BaseProvider
     {

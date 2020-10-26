@@ -1,7 +1,7 @@
 ﻿using Hubee.Logging.Sdk.Core.Model;
 using Serilog;
 
-namespace Hubee.Logging.Sdk.Infra.Serilog.Configurations.Provides
+namespace Hubee.Logging.Sdk.Infra.Serilog.Configurations.Providers
 {
     public class ConsoleProvider : BaseProvider
     {

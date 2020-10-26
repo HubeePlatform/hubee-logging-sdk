@@ -1,0 +1,9 @@
+{
+  "HubeeLoggingConfig": {
+    "ApplicationName": "Test",
+    "LibraryType": "",
+    "ProviderType": "Console",
+    "Host": "localhost",
+    "Port": "8080"
+  }
+}
