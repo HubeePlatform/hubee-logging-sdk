@@ -17,16 +17,9 @@ jobs:
       run: dotnet pack --configuration Release
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
-      with:
-        name: nupkg
-        path: /home/runner/work/hubee-logging-sdk/hubee-logging-sdk/src/Hubee.Logging.Sdk/bin/Release/*.nupkg
-  publish:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Push to GitHub Feed
-        run: |
-          for f in /home/runner/work/hubee-logging-sdk/hubee-logging-sdk/src/Hubee.Logging.Sdk/bin/Release/*.nupkg
-          do
-            dotnet nuget push @$f --source "https://nuget.pkg.github.com/HubeePlatform/index.json" -k $ORG_GITHUB_PACKAGES_PASSWORD
-          done
+    - name: Push to GitHub Feed
+      run: |
+        for f in /home/runner/work/hubee-logging-sdk/hubee-logging-sdk/src/Hubee.Logging.Sdk/bin/Release/*.nupkg
+        do
+          dotnet nuget push "@$f" --source "https://nuget.pkg.github.com/HubeePlatform/index.json" -k $ORG_GITHUB_PACKAGES_PASSWORD
+        done
