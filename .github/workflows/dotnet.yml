@@ -5,10 +5,8 @@ on:
     branches: [ master ]
 
 jobs:
-  build-and-publish-package:
-
+  build:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
@@ -22,3 +20,22 @@ jobs:
       with:
         name: nupkg
         path: /home/runner/work/hubee-logging-sdk/hubee-logging-sdk/src/Hubee.Logging.Sdk/bin/Release/*.nupkg
+  pack:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: nupkg
+          path: /home/runner/work/hubee-logging-sdk/hubee-logging-sdk/src/Hubee.Logging.Sdk/bin/Release/*.nupkg
+  publish:
+    needs: [pack]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Push to GitHub Feed
+        run: |
+          for f in /home/runner/work/hubee-logging-sdk/hubee-logging-sdk/src/Hubee.Logging.Sdk/bin/Release/*.nupkg
+          do
+            curl -vX PUT -u "$ORG_GITHUB_PACKAGES_USER:$ORG_GITHUB_PACKAGES_PASSWORD" -F package=@$f $https://nuget.pkg.github.com/HubeePlatform/index.json
+          done
