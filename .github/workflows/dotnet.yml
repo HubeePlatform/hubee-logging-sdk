@@ -6,8 +6,6 @@ on:
 
 jobs:
   build:
-    env:
-      ORG_GITHUB_PACKAGES_PASSWORD:  ${{ secrets.ORG_GITHUB_PACKAGES_PASSWORD }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -18,10 +16,12 @@ jobs:
     - name: Pack
       run: dotnet pack --configuration Release
     - name: Push to GitHub Feed
+      env:
+        ORG_GITHUB_PACKAGES_PASSWORD:  ${{ secrets.ORG_GITHUB_PACKAGES_PASSWORD }}
+      shell: bash
       run: |
         echo $ORG_GITHUB_PACKAGES_PASSWORD
         for f in /home/runner/work/hubee-logging-sdk/hubee-logging-sdk/src/Hubee.Logging.Sdk/bin/Release/*.nupkg
         do
-          echo @$f
-          dotnet nuget push "@$f" --source "https://nuget.pkg.github.com/HubeePlatform/index.json" -k $ORG_GITHUB_PACKAGES_PASSWORD
+          dotnet nuget push "$f" --source "https://nuget.pkg.github.com/HubeePlatform/index.json" -k $ORG_GITHUB_PACKAGES_PASSWORD
         done
