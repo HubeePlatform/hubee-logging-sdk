@@ -20,7 +20,6 @@ jobs:
         ORG_GITHUB_PACKAGES_PASSWORD:  ${{ secrets.ORG_GITHUB_PACKAGES_PASSWORD }}
       shell: bash
       run: |
-        echo $ORG_GITHUB_PACKAGES_PASSWORD
         for f in /home/runner/work/hubee-logging-sdk/hubee-logging-sdk/src/Hubee.Logging.Sdk/bin/Release/*.nupkg
         do
           dotnet nuget push "$f" --source "https://nuget.pkg.github.com/HubeePlatform/index.json" -k $ORG_GITHUB_PACKAGES_PASSWORD
