@@ -13,29 +13,20 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.301
-    - name: Restore dependencies
+    - name: Pack
       run: dotnet pack --configuration Release
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
         name: nupkg
         path: /home/runner/work/hubee-logging-sdk/hubee-logging-sdk/src/Hubee.Logging.Sdk/bin/Release/*.nupkg
-  pack:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Create Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: nupkg
-          path: /home/runner/work/hubee-logging-sdk/hubee-logging-sdk/src/Hubee.Logging.Sdk/bin/Release/*.nupkg
   publish:
-    needs: [pack]
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - name: Push to GitHub Feed
         run: |
           for f in /home/runner/work/hubee-logging-sdk/hubee-logging-sdk/src/Hubee.Logging.Sdk/bin/Release/*.nupkg
           do
-            curl -vX PUT -u "$ORG_GITHUB_PACKAGES_USER:$ORG_GITHUB_PACKAGES_PASSWORD" -F package=@$f $https://nuget.pkg.github.com/HubeePlatform/index.json
+            dotnet nuget push @$f --source "https://nuget.pkg.github.com/HubeePlatform/index.json" -k $ORG_GITHUB_PACKAGES_PASSWORD
           done
