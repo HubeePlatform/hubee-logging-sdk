@@ -15,8 +15,6 @@ jobs:
         dotnet-version: 3.1.301
     - name: Pack
       run: dotnet pack --configuration Release
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v2
     - name: Push to GitHub Feed
       run: |
         for f in /home/runner/work/hubee-logging-sdk/hubee-logging-sdk/src/Hubee.Logging.Sdk/bin/Release/*.nupkg
