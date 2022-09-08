@@ -11,6 +11,7 @@ namespace Hubee.Logging.Sdk.Core.Model
         public LogProviderType ProviderTypeEnum => EnumHelper.Parse<LogProviderType>(this.ProviderType);
         public string Host { get; set; }
         public int? Port { get; set; }
+        public string FilterByExcluding { get; set; } = "";
 
         public bool IsNotValid()
         {

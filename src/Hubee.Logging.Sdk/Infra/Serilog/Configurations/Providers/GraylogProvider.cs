@@ -14,6 +14,7 @@ namespace Hubee.Logging.Sdk.Infra.Serilog.Configurations.Providers
             var port = config.Port is null ? defaultPort : config.Port;
 
             Log.Logger = new LoggerConfiguration()
+              .Filter.ByExcluding(config.FilterByExcluding)
               .MinimumLevel.Information()
               .Enrich.WithProperty("ApplicationName", config.ApplicationName)
               .WriteTo.Console()
