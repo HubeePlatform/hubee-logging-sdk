@@ -8,7 +8,7 @@ namespace Hubee.Logging.Sdk.Infra.Serilog.Configurations.Providers
         public ConsoleProvider Configure(HubeeLoggingConfig config)
         {
             Log.Logger = new LoggerConfiguration()
-              .Filter.ByExcluding(config.FilterByExcluding)
+              .Filter.ByExcluding(config.GetFilterByExcluding())
               .Enrich.WithProperty("ApplicationName", config.ApplicationName)
               .Enrich.FromLogContext()
               .WriteTo.Console()

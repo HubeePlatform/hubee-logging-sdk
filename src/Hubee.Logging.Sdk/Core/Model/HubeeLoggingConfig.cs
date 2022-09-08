@@ -11,7 +11,7 @@ namespace Hubee.Logging.Sdk.Core.Model
         public LogProviderType ProviderTypeEnum => EnumHelper.Parse<LogProviderType>(this.ProviderType);
         public string Host { get; set; }
         public int? Port { get; set; }
-        public string FilterByExcluding { get; set; } = "RequestPath like '/health%'";
+        public string FilterByExcluding { get; set; }
 
         public bool IsNotValid()
         {
@@ -27,6 +27,12 @@ namespace Hubee.Logging.Sdk.Core.Model
             return
                 this.ProviderTypeEnum == LogProviderType.Graylog &&
                 string.IsNullOrEmpty(this.Host);
+        }
+
+        public string GetFilterByExcluding()
+        {
+            string defaultValue = "RequestPath like '/health%'";
+            return string.IsNullOrEmpty(this.FilterByExcluding) ? defaultValue : this.FilterByExcluding;
         }
     }
 }
