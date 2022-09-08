@@ -25,6 +25,7 @@ Após realizar a instalação podemos iniciar a configuração para utilizar o S
     "ApplicationName": "Nome da aplicação",
     "LibraryType": "Serilog",
     "ProviderType": "Graylog",
+    "FilterByExcluding": "RequestPath like '/health%'", // Filtrar logs
     "Host": "localhost",
     "Port": ""
   }
