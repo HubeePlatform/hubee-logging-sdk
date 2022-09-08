@@ -3,6 +3,7 @@
     "ApplicationName": "Test",
     "LibraryType": "Serilog",
     "ProviderType": "Console",
+    "FilterByExcluding": "RequestPath like '/health%'",
     "Host": "",
     "Port": ""
   }
